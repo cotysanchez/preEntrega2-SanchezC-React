@@ -13,7 +13,7 @@ const AppRouter = () => {
       </Route>
 
       
-      {/*<Route path="*" element={<h1>Not found</h1>} />*/}
+      <Route path="*" element={<h1>Not found</h1>} />
     </Routes>
   );
 }

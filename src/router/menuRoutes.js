@@ -34,6 +34,6 @@ export const routes = [
     Element: Checkout,
   },
 
-  
+ 
 ];
 
