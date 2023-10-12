@@ -1,0 +1,26 @@
+
+.button {
+  background-color: #D81B60;
+  color: white;
+  cursor: pointer;
+  margin-right: 8px;
+ 
+  
+}
+
+.add-to-cart-button{
+   padding-left: 20px;
+}
+
+.subtract-button{
+    padding-bottom: 15px;
+}
+
+
+.button:hover {
+  background-color: #6C3483;
+}
+
+.text {
+  color: #D81B60;
+}
