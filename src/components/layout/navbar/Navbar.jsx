@@ -1,6 +1,6 @@
 
 import CartWidget from '../../common/cartWidget/CartWidget';
-import './Navbar.css';
+import './navbar.css';
 import { Link, Outlet } from 'react-router-dom';
 
 export const Navbar = () => {
