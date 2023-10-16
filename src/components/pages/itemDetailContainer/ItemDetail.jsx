@@ -1,9 +1,10 @@
-import { Box, Button, Grid, Paper, Typography } from "@mui/material";
+import { Box, Grid, Paper, Typography } from "@mui/material";
 import CounterContainer from "../../common/counter/CounterContainer";
 
 
 export const ItemDetail = ({ productSelected, onAdd }) => {
   return (
+    
     <Paper elevation={3} sx={{ padding: 2 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
@@ -12,6 +13,7 @@ export const ItemDetail = ({ productSelected, onAdd }) => {
             alt={productSelected.title}
             style={{ maxWidth: '100%', height: 'auto' }}
           />
+          
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography variant="h4">{productSelected.title}</Typography>
@@ -29,5 +31,6 @@ export const ItemDetail = ({ productSelected, onAdd }) => {
         </Grid>
       </Grid>
     </Paper>
+  
   );
 };

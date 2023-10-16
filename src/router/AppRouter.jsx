@@ -1,7 +1,7 @@
 
 import { Route, Routes } from 'react-router-dom';
 import { routes } from "./menuRoutes";
-import ItemDetailContainer from '../components/pages/itemDetailContainer/ItemDetailContainer';
+
 
 const AppRouter = () => {
   return (

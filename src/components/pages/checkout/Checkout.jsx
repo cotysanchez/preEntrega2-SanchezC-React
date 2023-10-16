@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "./checkout.css"
 
 const Checkout = () => {
   //    const [ nombre, setNombre ] = useState("")
@@ -37,26 +38,6 @@ const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ACA IRIA TODO LO QUE QUIERAN HACER
-    // axios.post( "http-----", {nombre, apellido, email})
-    // nombre ---> 5 caracteres
-    // if (userInfo.nombre.length < 5 || !userInfo.email.includes("@")) {
-
-    //   if (userInfo.nombre.length < 5) {
-    //     console.log("entrooo")
-    //     setErrors({
-    //       ...errors,
-    //       nombre: "El nombre debe tener al menos 5 caracteres"
-    //     })
-    //   }
-
-    //   if (!userInfo.email.includes("@")) {
-    //     setErrors({ ...errors, email: "No corresponde a un email valido" });
-    //   }
-
-    //   return;
-    // }
-
     console.log(userInfo);
   };
 
@@ -64,18 +45,21 @@ const Checkout = () => {
 
   return (
     <div>
-      <h1>Estoy en el checkout</h1>
+      <h1>Este es el Checkout</h1>
 
       <form onSubmit={handleSubmit}>
         {/* <input type="text" name="nombre" onChange={ (e)=>setNombre(e.target.value) }  /> */}
 
         <input
+          style={{ marginLeft: '15px' }}
           type="text"
           name="nombre"
           onChange={handleChange}
           placeholder="Nombre"
         />
-        <span style={{ color: 'crimson', fontSize: ' 0.5rem' }}>
+        <span
+          style={{ color: 'crimson', fontSize: ' 0.5rem', paddingLeft: '3px' }}
+        >
           {errors.nombre}
         </span>
         <input
@@ -84,7 +68,9 @@ const Checkout = () => {
           onChange={handleChange}
           placeholder="Apellido"
         />
-        <span style={{ color: 'crimson', fontSize: ' 0.5rem' }}>
+        <span
+          style={{ color: 'crimson', fontSize: ' 0.5rem', paddingLeft: '3px' }}
+        >
           {errors.apellido}
         </span>
 
@@ -94,12 +80,18 @@ const Checkout = () => {
           onChange={handleChange}
           placeholder="email"
         />
-        <span style={{ color: 'crimson', fontSize: ' 0.5rem' }}>
+        <span
+          style={{ color: 'crimson', fontSize: ' 0.5rem', paddingLeft: '3px' }}
+        >
           {errors.email}
         </span>
 
         <button>Enviar</button>
-        <button type="button" onClick={() => console.log('se cancelo')}>
+        <button 
+          type="button"
+          variant="contained" 
+          onClick={() => console.log('se cancelo')}
+        >
           Cancelar
         </button>
       </form>
@@ -111,16 +103,8 @@ const Checkout = () => {
 
 export default Checkout;
 
-// let persona = {
-//     nombre: "pepe",
-//     edad: 22
-// }
 
-// // console.log( persona.nombre )
-// // console.log( persona["nombre"] )
 
-// const mostrarPropiedad = (prop)=>{
-//     console.log( persona[prop] )
-// }
 
-// mostrarPropiedad("edad")
+
+

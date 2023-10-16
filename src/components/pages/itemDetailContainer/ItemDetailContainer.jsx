@@ -11,8 +11,7 @@ const ItemDetailContainer = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    let producto = products.find(
-      (product) => product.id === +id);
+    let producto = products.find((product) => product.id === +id);
 
     const getProduct = new Promise((resolve, reject) => {
       resolve(producto);
