@@ -9,11 +9,11 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   const { categoryName } = useParams();
-  //console.log(categoryName ? "estoy intentadno filtrar" : "Estoy en el Home");
+  
 
   useEffect(() => {
     const productosFiltrados= products.filter(product => product.category === categoryName)
-    //console.log(productosFiltrados, "programacion")
+    
 
     const tarea = new Promise((resolve, reject) => {
       resolve(categoryName ? productosFiltrados : products);

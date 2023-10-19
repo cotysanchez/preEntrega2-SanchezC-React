@@ -1,24 +1,10 @@
 import { useState } from 'react';
+import { customTheme } from '../../../themeConfig';
 import "./checkout.css"
+import { Button, TextField } from '@mui/material';
 
 const Checkout = () => {
-  //    const [ nombre, setNombre ] = useState("")
-  //    const [ apellido, setApellido ] = useState("")
-  //    const [ email, setEmail ] = useState("")
-
-  //   const capturarNombre = (e) => {
-  //     setUserInfo( { ...userInfo, nombre: e.target.value  } )
-  //   };
-
-  //   const capturarApellido = (e) => {
-  //     setUserInfo( { ...userInfo, apellido: e.target.value  } )
-
-  //   };
-
-  //   const capturarEmail = (e) => {
-  //     setUserInfo( { ...userInfo, email: e.target.value  } )
-
-  //   };
+  
   const [userInfo, setUserInfo] = useState({
     nombre: '',
     apellido: '',
@@ -45,58 +31,95 @@ const Checkout = () => {
 
   return (
     <div>
-      <h1>Este es el Checkout</h1>
+      <h1
+        style={{
+          marginLeft: '20px',
+          color: '#D81B60',
+          fontFamily: 'Arial',
+          fontWeight: '200',
+          marginBottom: '15px',
+        }}
+      >
+        Este es el Checkout
+      </h1>
 
       <form onSubmit={handleSubmit}>
-        {/* <input type="text" name="nombre" onChange={ (e)=>setNombre(e.target.value) }  /> */}
-
-        <input
-          style={{ marginLeft: '15px' }}
+        <TextField
+          style={{ marginLeft: '20px', }}
           type="text"
           name="nombre"
           onChange={handleChange}
           placeholder="Nombre"
-        />
+          >
+        </TextField>
         <span
-          style={{ color: 'crimson', fontSize: ' 0.5rem', paddingLeft: '3px' }}
+          style={{
+            display: 'flex',
+            color: 'crimson',
+            fontSize: ' 0.5rem',
+            marginLeft: '5px',
+          }}
         >
           {errors.nombre}
         </span>
-        <input
+        <TextField
+          style={{ marginLeft: '20px', marginTop: '5px' }}
           type="text"
           name="apellido"
           onChange={handleChange}
           placeholder="Apellido"
-        />
+          >
+        </TextField>
+       
         <span
-          style={{ color: 'crimson', fontSize: ' 0.5rem', paddingLeft: '3px' }}
+          style={{
+            display: 'flex',
+            color: 'crimson',
+            fontSize: ' 0.5rem',
+            paddingLeft: '3px',
+          }}
         >
           {errors.apellido}
         </span>
 
-        <input
+        <TextField
+          style={{ marginLeft: '20px', marginTop: '5px' }}
           type="text"
           name="email"
           onChange={handleChange}
-          placeholder="email"
-        />
+          placeholder="Email"
+        >
+        </TextField>
         <span
-          style={{ color: 'crimson', fontSize: ' 0.5rem', paddingLeft: '3px' }}
+          style={{
+            display: 'flex',
+            color: 'crimson',
+            fontSize: ' 0.5rem',
+            paddingLeft: '3px',
+          }}
         >
           {errors.email}
         </span>
 
-        <button>Enviar</button>
-        <button 
+        <Button
+          style={{ marginLeft: '20px', marginTop: '10px' }}
           type="button"
-          variant="contained" 
+          variant="contained"
+          size="small"
+          onClick={() => console.log("se envio")}
+        >
+          Enviar
+        </Button>
+        <Button
+          style={{ marginRight: '10px', marginLeft: "10px", marginTop: "10px" }}
+          type="button"
+          variant="contained"
+          size='small'
           onClick={() => console.log('se cancelo')}
         >
           Cancelar
-        </button>
+        </Button>
       </form>
-
-      {/* <button onClick={}></button> */}
     </div>
   );
 };
