@@ -6,19 +6,20 @@ body{
 h2 {
     padding-left: 35px;
     padding-bottom: 10px;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: 500;
     color: #D81B60;
 }
 
-h3{
+h4{
     padding-left: 35px;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 300;
 }
 
 img{
     padding-left: 35px;
 }
+

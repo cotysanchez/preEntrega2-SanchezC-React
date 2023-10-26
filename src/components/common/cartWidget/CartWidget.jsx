@@ -7,12 +7,15 @@ import { CartContext } from '../../../context/CartContext';
 
 const CartWidget = () => {
 
-  const {cart} = useContext(CartContext)
+  const {getTotalQuantity} = useContext(CartContext)
+  
+  let total= getTotalQuantity()
+
 
   return (
     <Link to="/cart">
-      <Badge badgeContent={cart.length} color="primary">
-        <LocalMallIcon color="secondary" />
+      <Badge badgeContent={total} showZero color="primary">
+        <LocalMallIcon color="primary-light" />
       </Badge>
     </Link>
   );

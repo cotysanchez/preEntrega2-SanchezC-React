@@ -11,7 +11,7 @@ const CounterPresentacional = ({ sumar, contador, restar, onAdd }) => {
         size="small"
         onClick={sumar}
       >
-        Sumar
+        +
       </Button>
       <Typography className="text" fontSize={'20px'}>
         {contador}
@@ -22,7 +22,7 @@ const CounterPresentacional = ({ sumar, contador, restar, onAdd }) => {
         size="small"
         onClick={restar}
       >
-        Restar
+        -
       </Button>
       <Button
         className="button add-to-cart-button"

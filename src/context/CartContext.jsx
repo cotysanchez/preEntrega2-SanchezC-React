@@ -1,6 +1,6 @@
-import { createContext, lazy, useState } from "react"
+import { createContext, useState } from "react"
 
-export const CartContext = createContext()
+export const CartContext = createContext();
 
 
 const CartContextComponent = ({ children }) => {
@@ -13,22 +13,20 @@ const CartContextComponent = ({ children }) => {
 
       let newArr = cart.map((elemento)=>{
         if (elemento.id === product.id){
-          return{...elemento, quantity: product.quantity}
+          return{...elemento, quantity: product.quantity};
         }else{
-          return elemento
+          return elemento;
         }
       })
-      setCart(newArr)
-
-    }
-    else{
+      setCart(newArr);
+    }else{
       setCart([...cart, product]);
     } 
-  }
+  };
 
   const isInCart = (id) =>{
-    let exist = cart.some(elemento => elemento.id === id)
-    return exist
+    let exist = cart.some(elemento => elemento.id === id);
+    return exist;
   }
 
   /*Esta funcion nos dice cuanta catnidad de ese producto hay en el carrito*/
@@ -37,13 +35,43 @@ const CartContextComponent = ({ children }) => {
     return product?.quantity
   }
 
-  let data = {cart, addToCart, getQuantityById};
+  const clearCart = ()=> {
+    setCart([])
+  }
 
-    return (
-    <CartContext.Provider value={data}>
-       { children}
-    </CartContext.Provider>
-  )
-}
 
-export default CartContextComponent
+  const deleteProductById= (id) =>{
+    let newArr= cart.filter((product) => product.id !== id);
+    setCart(newArr)
+
+  };
+
+  const getTotalPrice = () =>{
+    let total = cart.reduce((acc, elemento) => {
+      return acc + elemento.precio * elemento.quantity;
+    }, 0);
+
+    return total;
+  };
+
+  const getTotalQuantity= ()=>{
+    let total= cart.reduce((acc,elemento)=>{
+      return acc + elemento.quantity
+    }, 0);
+
+    return total; 
+  };
+
+
+
+
+
+
+
+  let data = {cart, addToCart, getQuantityById, clearCart, deleteProductById, getTotalPrice, getTotalQuantity};
+
+    return <CartContext.Provider value={data}>{ children}</CartContext.Provider>;
+    
+};
+
+export default CartContextComponent;

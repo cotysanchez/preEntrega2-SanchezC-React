@@ -1,32 +1,35 @@
 import { useContext, useEffect , useState } from "react";
-import { products } from "../../../productsMocks";
+
 import {ItemDetail} from "./ItemDetail";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import Swal from "sweetalert2";
+import { db } from "../../../firebaseConfig";
+import{getDoc, collection, doc} from "firebase/firestore"
+
 
 const ItemDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
-  
+  const [showCounter, setShowCounter] = useState (true)
+
   const { id } = useParams();
 
-  const navigate = useNavigate()
-
   const { addToCart , getQuantityById } = useContext(CartContext)
-  let totalQuantity = getQuantityById(+id)
-  console.log(totalQuantity)
+  
+  let totalQuantity = getQuantityById(+id);
+  console.log(totalQuantity);
   
   
   useEffect(() => {
-    let producto = products.find((product) => product.id === +id);
+   let itemCollection = collection(db, "products")
+   
+   let refDoc = doc(itemCollection, id)
 
-    const getProduct = new Promise((resolve, reject) => {
-      resolve(producto);
-      
-    });
+   getDoc(refDoc).then((res) => {
+    setProductSelected({ id: res.id, ...res.data()})
+   })
 
-    getProduct
-      .then((res) => setProductSelected(res))
-      .catch((err) => console.log(err));
+
   }, [id]);
 
   const onAdd = (cantidad) => {
@@ -35,13 +38,24 @@ const ItemDetailContainer = () => {
       quantity: cantidad,
     };
 
-    addToCart( item )
+    addToCart( item );
+
+    Swal.fire({
+      
+      position: "center",
+      icon: "success",
+      title: "Producto agregado al carrito",
+      showConfirmButton: false,
+      timer: 1300,
+    })
+
+    setShowCounter(false);
 
     
-    navigate("/cart")
+    
   };
 
-  return <ItemDetail productSelected={productSelected} onAdd={onAdd} initial ={totalQuantity}/>;
+  return <ItemDetail showCounter={showCounter} productSelected={productSelected} onAdd={onAdd} initial ={totalQuantity}/>;
 };
 
 export default ItemDetailContainer;
