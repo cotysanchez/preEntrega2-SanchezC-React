@@ -48,7 +48,7 @@ const CartContextComponent = ({ children }) => {
 
   const getTotalPrice = () =>{
     let total = cart.reduce((acc, elemento) => {
-      return acc + elemento.precio * elemento.quantity;
+      return acc + elemento.price * elemento.quantity;
     }, 0);
 
     return total;
