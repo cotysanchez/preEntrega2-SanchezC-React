@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
 import ItemList from './ItemList';
-import { Grid } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import Skeleton from '@mui/material/Skeleton'; 
-import {getDocs, collection, query, where} from "firebase/firestore";
+import {getDocs, collection, query, where, addDoc} from "firebase/firestore";
 import { db } from '../../../firebaseConfig';
 
 
@@ -12,6 +12,7 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   
   const { categoryName } = useParams();
+
 
   useEffect(() => {
     let productsCollection = collection(db, "products")
@@ -32,7 +33,10 @@ const ItemListContainer = () => {
         return {...product.data(), id:product.id}
         
       })
-      setItems(newArray)
+
+      //let arrayFiltrado= newArray.filter((elemento) =>elemento.stock > 0)
+
+      setItems(newArray);
     })
     
   }, [categoryName]);
@@ -40,32 +44,33 @@ const ItemListContainer = () => {
   return (
     <div>
       {items.length === 0 ? (
-        <div style={{ display: 'flex', gap: 20 }}>
+        <div style={{ display: 'flex', gap: 20 ,marginLeft: "40px"}}>
           <div>
-            <Skeleton variant="rectangular" width={250} height={120} />
-            <Skeleton variant="text" width={80} height={40} />
-            <Skeleton variant="text" width={150} height={30} />
+            <Skeleton variant="rectangular" width={300} height={220} />
+            <Skeleton variant="text" width={170} height={50} />
+            <Skeleton variant="text" width={120} height={60} />
           </div>
           <div>
-            <Skeleton variant="rectangular" width={250} height={120} />
-            <Skeleton variant="text" width={80} height={40} />
-            <Skeleton variant="text" width={150} height={30} />
+            <Skeleton variant="rectangular" width={300} height={220} />
+            <Skeleton variant="text" width={170} height={50} />
+            <Skeleton variant="text" width={120} height={60} />
           </div>
           <div>
-            <Skeleton variant="rectangular" width={250} height={120} />
-            <Skeleton variant="text" width={80} height={40} />
-            <Skeleton variant="text" width={150} height={30} />
+            <Skeleton variant="rectangular" width={300} height={220} />
+            <Skeleton variant="text" width={170} height={50} />
+            <Skeleton variant="text" width={120} height={60} />
           </div>
           <div>
-            <Skeleton variant="rectangular" width={250} height={120} />
-            <Skeleton variant="text" width={80} height={40} />
-            <Skeleton variant="text" width={150} height={30} />
+            <Skeleton variant="rectangular" width={300} height={220} />
+            <Skeleton variant="text" width={170} height={50} />
+            <Skeleton variant="text" width={120} height={60} />
           </div>
+          
         </div>
       ) : (
         <Grid container spacing={2}>
           {items.map((item, index) => (
-            <Grid item xs={12} sm={4} key={item.id}>
+            <Grid item xs={12} sm={3} key={item.id}>
               <ItemList items={[item]} />
             </Grid>
           ))}

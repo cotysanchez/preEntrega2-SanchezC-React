@@ -6,7 +6,7 @@ const CheckoutFormik = () => {
   const { handleChange, handleSubmit, errors } = useFormik({
     initialValues: {
       nombre: '',
-      apellido: '',
+      telefono: '',
       email: '',
       password: '',
       repetPassword: '',
@@ -21,7 +21,7 @@ const CheckoutFormik = () => {
         .required('Este campo es obligatorio')
         .min(5, 'Debe tener al menos 5 letras')
         .max(20, 'Debe tener máximo 20 caracteres'),
-      apellido: Yup.string().required('El campo es obligatorio'),
+      telefono: Yup.string().required('El campo es obligatorio'),
       email: Yup.string()
         .email('El correo no parece válido, debe contener @')
         .required('El campo es obligatorio'),
@@ -43,6 +43,7 @@ const CheckoutFormik = () => {
     <div style={{ padding: '50px' }}>
       <form onSubmit={handleSubmit}>
         <TextField
+          style={{ display: 'flex', marginTop: '5px' }}
           label="Nombre"
           variant="outlined"
           name="nombre"
@@ -51,14 +52,16 @@ const CheckoutFormik = () => {
           helperText={errors.nombre}
         />
         <TextField
-          label="Apellido"
+          style={{ display: 'flex', marginTop: '5px' }}
+          label="Telefono"
           variant="outlined"
-          name="apellido"
+          name="telefono"
           onChange={handleChange}
-          error={errors.apellido ? true : false}
-          helperText={errors.apellido}
+          error={errors.telefono ? true : false}
+          helperText={errors.telefono}
         />
         <TextField
+          style={{ display: 'flex', marginTop: '5px' }}
           label="Email"
           variant="outlined"
           name="email"
@@ -67,6 +70,7 @@ const CheckoutFormik = () => {
           helperText={errors.email}
         />
         <TextField
+          style={{ display: 'flex', marginTop: '5px' }}
           label="Contraseña"
           variant="outlined"
           name="password"
@@ -75,6 +79,7 @@ const CheckoutFormik = () => {
           helperText={errors.password}
         />
         <TextField
+          style={{ display: 'flex', marginTop: '5px' }}
           label="Repetir Contraseña"
           variant="outlined"
           name="repetPassword"
@@ -83,10 +88,14 @@ const CheckoutFormik = () => {
           helperText={errors.repetPassword}
         />
 
-        <Button variant="contained" type="submit">
+        <Button style={{ marginTop: '10px' }} variant="contained" type="submit">
           Enviar
         </Button>
-        <Button variant={'outlined'} type="button">
+        <Button
+          style={{ marginTop: '10px', marginLeft: '5px' }}
+          variant={'outlined'}
+          type="button"
+        >
           Cancelar
         </Button>
       </form>

@@ -16,14 +16,14 @@ const ItemDetailContainer = () => {
 
   const { addToCart , getQuantityById } = useContext(CartContext)
   
-  let totalQuantity = getQuantityById(+id);
-  console.log(totalQuantity);
+  let totalQuantity = getQuantityById(id);
+  
   
   
   useEffect(() => {
-   let itemCollection = collection(db, "products")
+   let itemCollection = collection(db, "products");
    
-   let refDoc = doc(itemCollection, id)
+   let refDoc = doc(itemCollection, id);
 
    getDoc(refDoc).then((res) => {
     setProductSelected({ id: res.id, ...res.data()})

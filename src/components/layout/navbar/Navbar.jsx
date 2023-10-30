@@ -1,9 +1,32 @@
-
+import { useEffect, useState } from 'react';
 import CartWidget from '../../common/cartWidget/CartWidget';
 import './navbar.css';
 import { Link, Outlet } from 'react-router-dom';
+import { db } from '../../../firebaseConfig';
+import { collection, getDocs} from "firebase/firestore";
+
+
+
+
 
 export const Navbar = () => {
+  const[ categories, setCategories]= useState([])
+
+  useEffect(() => {
+    const categoriesCollection = collection (db, "categories");
+    
+    getDocs(categoriesCollection)
+      .then((res) => {
+        let arrayCategories = res.docs.map((category) => {
+          return {...category.data(), id: category.id}
+        })
+      setCategories(arrayCategories)
+
+      });
+      //.catch ((err) => console.log (err));
+  }, []);
+
+
   return (
     <>
       <div className={'containerNavbar'}>
@@ -18,20 +41,18 @@ export const Navbar = () => {
           <Link to="/">
             <li>Cursos</li>
           </Link>
-          <Link to="/category/programacion">
-            <li>Programación</li>
-          </Link>
-          <Link to="/category/musica">
-            <li>Música</li>
-          </Link>
-          <Link to="/category/cocina">
-            <li>Cocina</li>
-          </Link>
+          {categories.map((category) =>(
+            <Link key= {category.id} to={category.path}>
+              <li>{category.name}</li>
+            </Link>
+
+          ))}
+
         </ul>
         <CartWidget />
       </div>
 
-      <Outlet />
+      
     </>
   );
 };

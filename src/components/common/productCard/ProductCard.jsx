@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   return (
-    <Card sx={{ maxWidth: 340 }}>
+    <Card sx={{ maxWidth: 300 }}>
       <CardMedia
-        sx={{ height: 180 }}
+        sx={{ height: 170 }}
         image={item.img}
         title={`image ${item.title}`}
       />

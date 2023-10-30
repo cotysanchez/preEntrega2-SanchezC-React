@@ -51,7 +51,7 @@ export let products = [
     title: 'Intodución al DJ',
     price: 320,
     stock: 6,
-    description: 'Curso introductorio para DJ',
+    description: 'Curso introductorio para DJ paso a paso',
     extendedDescription:
       'Conviértete en un DJ con este curso introductorio. Aprenderás los conceptos básicos de la mezcla de música, el uso de equipos de DJ y la creación de mezclas emocionantes.',
     category: 'musica',
@@ -104,5 +104,41 @@ export let products = [
       '¡Bienvenidos al emocionante mundo de la cocina china! ¿Alguna vez has soñado con dominar los sabores y técnicas culinarias de la milenaria China? Si es así, estás en el lugar adecuado. Nuestro curso de cocina china te sumergirá en una experiencia culinaria única que te permitirá descubrir los secretos detrás de algunos de los platos más icónicos y deliciosos de la gastronomía china.En este curso, aprenderás a preparar platos tradicionales chinos con autenticidad y destreza. Desde las técnicas de corte y preparación de ingredientes hasta la combinación de sabores y la presentación de los platos, te guiaremos en un viaje culinario que te permitirá dominar la riqueza y diversidad de la cocina china.',
     category: 'cocina',
     img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1698443656/cocina_china.jpg',
+  },
+
+  {
+    id: 10,
+    title: 'Marketing Digital',
+    price: 230,
+    stock: 5,
+    description: 'Aprende Marketing Digital de Cero a 100',
+    extendedDescription:
+      'En la era digital, el marketing es la clave para el éxito de cualquier negocio. ¿Estás listo para desbloquear todo el potencial de tu marca en línea? ¡Nuestro Curso de Marketing Digital te brindará las herramientas y estrategias necesarias para triunfar en el mundo digital!No importa si eres un emprendedor, un profesional de marketing o un dueño de negocio, este curso te dará las habilidades necesarias para destacarte en el competitivo mundo del marketing digital. ¡No te quedes atrás! Únete a nosotros y haz crecer tu presencia en línea hoy mismo.',
+    category: 'marketing',
+    img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1698707987/marketing_digital_-_1_qamfyg.jpg',
+  },
+
+  {
+    id: 11,
+    title: 'Marketing de Contenido',
+    price: 200,
+    stock: 4,
+    description: 'Aprende Marketing de Contenido como un experto',
+    extendedDescription:
+      'El Marketing de Contenido se ha convertido en la columna vertebral de cualquier estrategia de marketing exitosa en la era digital. Si sueñas con atraer a tu audiencia, construir relaciones sólidas y aumentar la visibilidad de tu marca, ¡nuestro Curso de Marketing de Contenido es perfecto para ti!¿Estás listo para impulsar tu estrategia de contenido y llevar tu marca al siguiente nivel? ¡Inscríbete en nuestro curso de Marketing de Contenido hoy mismo y comienza tu viaje hacia el éxito en línea!',
+    category: 'marketing',
+    img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1698708245/marketing_de_contenidos1_xqamn9.jpg',
+  },
+
+  {
+    id: 12,
+    title: 'Estrategias de Marketing para RRSS',
+    price: 240,
+    stock: 10,
+    description: 'Implementa las mejores estrategias para tus redes',
+    extendedDescription:
+      'En la actualidad, las redes sociales son mucho más que simples plataformas de interacción. Son un poderoso canal de marketing que puede impulsar tu negocio a nuevos horizontes. Si estás listo para desbloquear el potencial de las redes sociales y convertir seguidores en clientes, nuestro Curso de Estrategias de Marketing Digital para Redes Sociales es perfecto para ti.Nuestros expertos en Marketing Digital te guiarán a lo largo de este emocionante viaje de aprendizaje. Además, tendrás acceso a material descargable, ejercicios prácticos y una comunidad de estudiantes que te apoyará en cada paso.',
+    category: 'marketing',
+    img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1698707614/marketing_para_redes_g3vkau.jpg',
   },
 ];

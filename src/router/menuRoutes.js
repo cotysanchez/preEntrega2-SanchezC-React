@@ -2,6 +2,10 @@ import CartContainer from "../components/pages/cart/CartContainer";
 import ItemDetailContainer from "../components/pages/itemDetailContainer/ItemDetailContainer"; 
 import ItemListContainer from "../components/pages/itemListContainer/ItemListContainer";
 import CheckoutFormik from "../components/pages/checkoutFormik/CheckoutFormik";
+import CheckoutOficial from "../components/pages/checkoutOficial/CheckoutOficial";
+import Checkout from '../components/pages/checkout/Checkout';
+
+
 
 export const routes = [
   {
