@@ -12,8 +12,7 @@ const CheckoutFormik = () => {
       repetPassword: '',
     },
     onSubmit: (data) => {
-      console.log('se envió');
-      console.log(data);
+      
     },
     validateOnChange: false,
     validationSchema: Yup.object({
@@ -37,7 +36,7 @@ const CheckoutFormik = () => {
     }),
   });
 
-  console.log(errors);
+  
 
   return (
     <div style={{ padding: '50px' }}>

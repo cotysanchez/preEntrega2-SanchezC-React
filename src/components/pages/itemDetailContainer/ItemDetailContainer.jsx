@@ -6,7 +6,7 @@ import { CartContext } from "../../../context/CartContext";
 import Swal from "sweetalert2";
 import { db } from "../../../firebaseConfig";
 import{getDoc, collection, doc} from "firebase/firestore"
-
+import CartContainer from "../cart/CartContainer";
 
 const ItemDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
@@ -50,12 +50,20 @@ const ItemDetailContainer = () => {
     })
 
     setShowCounter(false);
-
-    
     
   };
 
-  return <ItemDetail showCounter={showCounter} productSelected={productSelected} onAdd={onAdd} initial ={totalQuantity}/>;
+  return (
+    
+  
+      <ItemDetail 
+        showCounter={showCounter} 
+        productSelected={productSelected} 
+        onAdd={onAdd} 
+        initial ={totalQuantity}
+    />
+  
+  );
 };
 
 export default ItemDetailContainer;

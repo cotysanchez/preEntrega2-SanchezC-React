@@ -7,8 +7,6 @@ import { collection, getDocs} from "firebase/firestore";
 
 
 
-
-
 export const Navbar = () => {
   const[ categories, setCategories]= useState([])
 

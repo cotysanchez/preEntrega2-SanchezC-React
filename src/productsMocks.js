@@ -28,15 +28,27 @@ export let products = [
     title: 'React.js',
     price: 450,
     stock: 6,
-    description: 'Aprende React.js como Experto',
+    description: 'Aprende React.js como un experto',
     extendedDescription:
       '¡Domina el arte de la programación web con React.js! ¿Quieres convertirte en un experto en el desarrollo de aplicaciones web modernas y dinámicas? Entonces, nuestro curso de React.js es la elección perfecta para ti. React.js es una de las bibliotecas más populares y poderosas para construir interfaces de usuario interactivas, y en este curso te llevaremos a través de un emocionante viaje de aprendizaje.React.js es ampliamente utilizado en la industria para crear aplicaciones web eficientes y atractivas. En este curso, aprenderás desde cero cómo utilizar esta biblioteca de JavaScript para construir interfaces de usuario de alto rendimiento que respondan a las acciones de los usuarios en tiempo real.',
     category: 'programacion',
-    img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1698444483/react_js_qgehts.jpg',
+    img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1696189317/JavaScript_ykb84f.jpg',
   },
 
   {
     id: 4,
+    title: 'Programacion Backend',
+    price: 500,
+    stock: 6,
+    description: 'Aprende Backend Inicial',
+    extendedDescription:
+      '¿Quieres convertirte en un experto en el corazón de las aplicaciones web y desarrollar las lógicas que hacen que todo funcione sin problemas? Nuestro curso de Programación Backend te proporcionará las habilidades necesarias para ser un desarrollador backend de alto nivel.Este curso se imparte a lo largo de 12 semanas, con clases teóricas y sesiones prácticas.Al finalizar este curso de Programación Backend, estarás preparado para desarrollar aplicaciones web robustas y escalables desde el lado del servidor. ¡Inscríbete hoy y comienza tu viaje para convertirte en un experto en desarrollo backend! ',
+    category: 'programacion',
+    img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1698926366/cursobackend_l5rbmr.jpg',
+  },
+
+  {
+    id: 5,
     title: 'Guitarra Inicial',
     price: 370,
     stock: 5,
@@ -47,7 +59,7 @@ export let products = [
     img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1696189626/guitarra-inicial_fdvbxg.jpg',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Intodución al DJ',
     price: 320,
     stock: 6,
@@ -59,7 +71,7 @@ export let products = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: 'Bateria Inicial',
     price: 360,
     stock: 10,
@@ -71,7 +83,19 @@ export let products = [
   },
 
   {
-    id: 7,
+    id: 8,
+    title: 'Piano',
+    price: 240,
+    stock: 10,
+    description: 'Aprende Piano desde cero',
+    extendedDescription:
+      '¿Siempre has soñado con tocar el piano, pero nunca encontraste el momento adecuado o la forma de hacerlo? ¡Tu sueño está a solo un clic de distancia! Nuestro curso en línea de piano te ofrece una experiencia de aprendizaje excepcional desde la comodidad de tu hogar. El curso se adapta a tu ritmo, pero la mayoría de los estudiantes completan el programa en 3 a 6 meses.Inscríbete hoy: Descubre la alegría de tocar el piano y la satisfacción de crear hermosas melodías. ¡Inscríbete ahora y comienza tu viaje musical desde la comodidad de tu hogar! La música está al alcance de tus manos.',
+    category: 'musica',
+    img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1698927473/piano_wlmbsv.jpg',
+  },
+
+  {
+    id: 9,
     title: 'Cocina Asiática',
     price: 150,
     stock: 4,
@@ -83,7 +107,7 @@ export let products = [
   },
 
   {
-    id: 8,
+    id: 10,
     title: 'Cocina Italiana',
     price: 280,
     stock: 5,
@@ -95,7 +119,7 @@ export let products = [
   },
 
   {
-    id: 9,
+    id: 11,
     title: 'Cocina China',
     price: 280,
     stock: 6,
@@ -107,7 +131,19 @@ export let products = [
   },
 
   {
-    id: 10,
+    id: 12,
+    title: 'Cocina Española',
+    price: 310,
+    stock: 6,
+    description: 'Aprende los mejores Platos',
+    extendedDescription:
+      '¿Alguna vez has deseado sorprender a tus amigos y familiares con deliciosos platos de la cocina española? Nuestro curso en línea te llevará a un viaje culinario a través de España, donde descubrirás los sabores y técnicas auténticas que hacen que la comida española sea tan irresistible.Requisitos Previos:No se requiere experiencia previa en cocina. Este curso es adecuado tanto para principiantes como para cocineros aficionados que deseen ampliar su repertorio culinario.Duración del Curso:El curso se imparte a lo largo de 8 semanas, con nuevas recetas y técnicas cada semana.Inscríbete hoy: Embárcate en un emocionante viaje culinario a España desde la comodidad de tu cocina. ¡Inscríbete ahora y comienza a cocinar auténticos platos españoles que deleitarán tus sentidos y los de tus seres queridos! ¡Buen provecho! ',
+    category: 'cocina',
+    img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1698926067/cocina_espa%C3%B1ola_mv0oxq.jpg',
+  },
+
+  {
+    id: 13,
     title: 'Marketing Digital',
     price: 230,
     stock: 5,
@@ -119,7 +155,7 @@ export let products = [
   },
 
   {
-    id: 11,
+    id: 14,
     title: 'Marketing de Contenido',
     price: 200,
     stock: 4,
@@ -131,7 +167,7 @@ export let products = [
   },
 
   {
-    id: 12,
+    id: 15,
     title: 'Estrategias de Marketing para RRSS',
     price: 240,
     stock: 10,
@@ -140,5 +176,17 @@ export let products = [
       'En la actualidad, las redes sociales son mucho más que simples plataformas de interacción. Son un poderoso canal de marketing que puede impulsar tu negocio a nuevos horizontes. Si estás listo para desbloquear el potencial de las redes sociales y convertir seguidores en clientes, nuestro Curso de Estrategias de Marketing Digital para Redes Sociales es perfecto para ti.Nuestros expertos en Marketing Digital te guiarán a lo largo de este emocionante viaje de aprendizaje. Además, tendrás acceso a material descargable, ejercicios prácticos y una comunidad de estudiantes que te apoyará en cada paso.',
     category: 'marketing',
     img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1698707614/marketing_para_redes_g3vkau.jpg',
+  },
+
+  {
+    id: 16,
+    title: 'Inbound Marketing',
+    price: 250,
+    stock: 5,
+    description: 'Implementa las mejores estrategias Orgánicas',
+    extendedDescription:
+      'El mundo del marketing digital está en constante evolución, y el Inbound Marketing se ha convertido en la clave para atraer, convertir y retener a los clientes en la era digital. Nuestro curso en línea te ofrece la oportunidad de convertirte en un experto en estrategias de Inbound Marketing y revolucionar tu enfoque de marketing.Duración del Curso:El curso se imparte a lo largo de 10 semanas, con módulos interactivos y ejercicios prácticos.Inscríbete hoy: Únete a miles de profesionales que han transformado sus estrategias de marketing con el Inbound Marketing. ¡Inscríbete ahora y comienza a atraer y retener a tus clientes de manera efectiva en la era digital! ¡Potencia tu presencia en línea y haz crecer tu negocio!',
+    category: 'marketing',
+    img: 'https://res.cloudinary.com/dftcprmrq/image/upload/v1698926847/inbound_marketing_hegqtn.jpg',
   },
 ];

@@ -1,4 +1,4 @@
-import { Button, IconButton } from '@mui/material';
+import { Box, Button, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../../../context/CartContext';
@@ -13,11 +13,17 @@ import {
   Typography,
 } from '@mui/material';
 
+
+
+
+
 const CartContainer = () => {
   const { cart, clearCart, deleteProductById, getTotalPrice } =
     useContext(CartContext);
+  
 
   let total = getTotalPrice()
+  
 
   const clearCartWithAlert = () => {
     Swal.fire({
@@ -50,34 +56,37 @@ const CartContainer = () => {
         Este es tu Carrito de Compras
       </h2>
 
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}> 
-      {cart.map((product) => (
-        <Card key={product.id} sx={{ maxWidth: 230, margin: "10px" }}>
-          <CardMedia
-            sx={{ height: 180 }}
-            image={product.img}
-            title={`image ${product.title}`}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {product.title}
-            </Typography>
-            <Typography variant="body1" color="text.secondary">
-              u$D {product.price} .-
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <IconButton onClick={() => deleteProductById(product.id)}>
-              <DeleteForeverIcon color={"primary"} />
-            </IconButton>
-          </CardActions>
-        </Card>
-      ))}
-    </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {cart.map((product) => (
+          <Card key={product.id} sx={{ maxWidth: 230, margin: '10px' }}>
+            <CardMedia
+              sx={{ height: 180 }}
+              image={product.img}
+              title={`image ${product.title}`}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {product.title}
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                u$D {product.price} .-
+              </Typography>
+
+              
+
+            </CardContent>
+            <CardActions>
+              <IconButton onClick={() => deleteProductById(product.id)}>
+                <DeleteForeverIcon color={'primary'} />
+              </IconButton>
+            </CardActions>
+          </Card>
+        ))}
+      </div>
 
       {cart.length > 0 && (
         <div>
-          <h4>El total a pagar es: {total}</h4>
+          <h4>El total a pagar es U$D {total}</h4>
           <Link to="/checkout">
             <Button
               style={{ marginLeft: '20px', marginTop: '15px' }}
@@ -87,6 +96,7 @@ const CartContainer = () => {
               Finalizar Compra
             </Button>
           </Link>
+
           <Button
             style={{ marginLeft: '20px', marginTop: '15px' }}
             variant="outlined"

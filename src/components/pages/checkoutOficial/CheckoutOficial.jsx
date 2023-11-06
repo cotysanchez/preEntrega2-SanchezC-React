@@ -4,10 +4,9 @@ import { CartContext } from '../../../context/CartContext';
 import { serverTimestamp } from 'firebase/firestore';
 import { db } from '../../../firebaseConfig';
 import { collection, addDoc, updateDoc, doc } from 'firebase/firestore';
-import { Button, Link } from '@mui/material';
+import { Box, Button, Card, CardContent, TextField, Typography } from '@mui/material';
 
-
-
+import { Link } from 'react-router-dom';
 
 const CheckoutOficial = () => {
     const[userData, setUserData]= useState ({
@@ -46,27 +45,34 @@ const CheckoutOficial = () => {
 
     clearCart();
 
-
     };
-
-
 
   return (
     <>
       {orderId ? (
-        <div>
-          <h2>Gracias por tu Compra!! Su identificador de Comprobante es {orderId}</h2>
-          <Link to="/">Seguir Comprando</Link>
-        </div>
+        <Card sx={{ maxWidth: 1200, minWidth: 180, marginLeft: "40px", marginTop: "45px" }}>
+          <CardContent>
+            <Typography variant="h2" style={{fontSize: "30px"}}>¡Gracias por Tu Compra!</Typography>
+            <Typography
+              variant="body1"
+              style={{ marginLeft: '35px', marginBottom: '25px', marginTop: "20px", fontStyle: "oblique" }}>
+              Su identificador de Comprobante es: {orderId}</Typography>
+          
+          <Link to="/" size="small" style={{marginLeft:"35px"}}>Seguir Comprando</Link>
+          
+          </CardContent>
+        </Card>
+
+
       ) : (
         <form onSubmit={handleSubmit}>
-          <input
+          <TextField
             style={{
               display: 'flex',
               color: 'crimson',
               fontSize: ' 1rem',
-              marginLeft: '15px',
-              marginTop: "30px",
+              marginLeft: '20px',
+              marginTop: '30px',
             }}
             type="text"
             placeholder="Nombre"
@@ -74,12 +80,12 @@ const CheckoutOficial = () => {
             onChange={handleChange}
           />
 
-          <input
+          <TextField
             style={{
               display: 'flex',
               color: 'crimson',
               fontSize: ' 1rem',
-              marginLeft: '15px',
+              marginLeft: '20px',
               marginTop: '5px',
             }}
             type="text"
@@ -88,12 +94,12 @@ const CheckoutOficial = () => {
             onChange={handleChange}
           />
 
-          <input
+          <TextField
             style={{
               display: 'flex',
               color: 'crimson',
               fontSize: ' 1rem',
-              marginLeft: '15px',
+              marginLeft: '20px',
               marginTop: '5px',
             }}
             type="text"
@@ -101,7 +107,14 @@ const CheckoutOficial = () => {
             name="email"
             onChange={handleChange}
           />
-          <Button type="submit">Comprar</Button>
+          <Button
+            type="submit"
+            variant="contained"
+            size="small"
+            style={{ marginLeft: '20px', marginTop: '15px' }}
+          >
+            Comprar
+          </Button>
         </form>
       )}
     </>

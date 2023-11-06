@@ -25,7 +25,9 @@ export const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => 
             Precio: U$D {productSelected.price}
           </Typography>
 
-          {initial && <h5>ya tienes {initial} unidades</h5>}
+          <Box style={{ marginTop: '15px'}}>
+            {initial && <h5 >¡Ya tienes {initial} unidades!</h5>}
+          </Box>
 
           {showCounter ? (
             <Box mt={2}>
@@ -36,8 +38,15 @@ export const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => 
               />
             </Box>
           ) : (
-            
-            <Link  to="/cart" >Terminar compra</Link>
+            <Box
+              style={{
+                color: 'primary-light',
+                marginTop: '20px',
+                marginBottom: '20px',
+              }}
+            >
+              <Link to="/cart" >Terminar compra</Link>
+            </Box>
           )}
         </Grid>
       </Grid>

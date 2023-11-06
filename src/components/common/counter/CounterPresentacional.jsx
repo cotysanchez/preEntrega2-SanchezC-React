@@ -1,10 +1,10 @@
 
-import { Button, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import './counter.css'; 
 
 const CounterPresentacional = ({ sumar, contador, restar, onAdd }) => {
   return (
-    <div>
+    <Box style={{ display: 'flex', marginBottom: '20px', marginTop: '30px' }}>
       <Button
         className="button"
         variant="outlined"
@@ -13,7 +13,11 @@ const CounterPresentacional = ({ sumar, contador, restar, onAdd }) => {
       >
         +
       </Button>
-      <Typography className="text" fontSize={'20px'}>
+      <Typography
+        className="text"
+        fontSize={'20px'}
+        style={{ paddingLeft: '10px', paddingRight: '15px' }}
+      >
         {contador}
       </Typography>
       <Button
@@ -24,16 +28,20 @@ const CounterPresentacional = ({ sumar, contador, restar, onAdd }) => {
       >
         -
       </Button>
-      <Button
-        className="button add-to-cart-button"
-        variant="contained"
-        size="small"
-        fullWidth
-        onClick={() => onAdd(contador)}
-      >
-        Agregar al carrito
-      </Button>
-    </div>
+
+      <Box>
+        <Button
+          style={{ display: 'flex', marginLeft: '15px' }}
+          className="button add-to-cart-button"
+          variant="contained"
+          size="small"
+          fullWidth
+          onClick={() => onAdd(contador)}
+        >
+          Agregar al carrito
+        </Button>
+      </Box>
+    </Box>
   );
 };
 
