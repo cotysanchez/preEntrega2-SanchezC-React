@@ -50,7 +50,7 @@ const CheckoutOficial = () => {
   return (
     <>
       {orderId ? (
-        <Card sx={{ maxWidth: 1200, minWidth: 180, marginLeft: "40px", marginTop: "45px" }}>
+        <Card sx={{ maxWidth: 1280, minWidth: 180, marginLeft: "40px", marginTop: "45px" }}>
           <CardContent>
             <Typography variant="h2" style={{fontSize: "30px"}}>¡Gracias por Tu Compra!</Typography>
             <Typography
