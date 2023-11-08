@@ -2,6 +2,7 @@
     text-decoration: none;
     
   } 
+ 
 
   .containerNavbar {
     width: 100%;
@@ -30,6 +31,4 @@
   
   }
   
-  .cartWidget{
-    color:#1ABC9C ;
-  }
+  
