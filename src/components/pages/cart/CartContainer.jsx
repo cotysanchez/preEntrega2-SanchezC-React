@@ -69,15 +69,30 @@ const CartContainer = () => {
                 {product.title}
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                u$D {product.price} .-
+                U$D {product.price} .-
+              </Typography>
+              <Typography  sx={{ marginTop: "1.8rem"}}variant="body2">
+                Cantidad: {product.quantity}
               </Typography>
 
-              
-
+              <Typography
+                sx={{ marginTop: '0.2rem', fontWeight: 'bold' }}
+                variant="body2"
+              >
+                Total: U$D {product.price * product.quantity}
+              </Typography>
             </CardContent>
             <CardActions>
               <IconButton onClick={() => deleteProductById(product.id)}>
-                <DeleteForeverIcon color={'primary'} />
+                <DeleteForeverIcon
+                  sx={{
+                    color: '#6C3483',
+                    transition: 'color 0.3s',
+                    '&:hover': {
+                      color: '#D81B60',
+                    },
+                  }}
+                />
               </IconButton>
             </CardActions>
           </Card>

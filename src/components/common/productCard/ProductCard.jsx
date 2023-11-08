@@ -1,7 +1,7 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-
-
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
 
 const ProductCard = ({ item }) => {
   return (
@@ -22,9 +22,35 @@ const ProductCard = ({ item }) => {
           u$D {item.price} .-
         </Typography>
       </CardContent>
-      <CardActions>
+
+      <CardActions disableSpacing>
+        <IconButton
+          sx={{
+            color: '#6C3483',
+            transition: 'color 0.3s',
+            '&:hover': {
+              color: '#D81B60',
+            },
+          }}
+          aria-label="add to favorites"
+        >
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton
+          sx={{
+            color: '#6C3483',
+            transition: 'color 0.3s',
+            '&:hover': {
+              color: '#D81B60',
+            },
+          }}
+          aria-label="share"
+        >
+          <ShareIcon />
+        </IconButton>
+
         <Link to={`/itemDetail/${item.id}`}>
-          <Button size="small" variant="outlined">
+          <Button variant="outlined" sx={{ size: 'small', marginLeft: '4rem' }}>
             Ver detalle
           </Button>
         </Link>
