@@ -25,6 +25,10 @@ export const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => 
             Precio: U$D {productSelected.price}
           </Typography>
 
+          <Typography variant="body2">
+            Stock {productSelected.stock}
+          </Typography>
+
           <Box style={{ marginTop: '15px'}}>
             {initial && <h5 >¡Ya tienes {initial} unidades!</h5>}
           </Box>

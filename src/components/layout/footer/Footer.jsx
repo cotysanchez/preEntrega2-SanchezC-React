@@ -88,7 +88,7 @@ export const Footer = () => {
             fontStyle: "italic",
           }}
         >
-          &copy; {new Date().getFullYear()} CSDigital. All rights reserved
+          &copy; {new Date().getFullYear()} CSDigital. All rights reserve
         </Typography>
       </Box>
     </footer>
