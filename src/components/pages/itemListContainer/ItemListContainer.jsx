@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-
 import ItemList from './ItemList';
-import { Button, Grid } from '@mui/material';
+import {  Grid } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import Skeleton from '@mui/material/Skeleton'; 
 import {getDocs, collection, query, where, addDoc} from "firebase/firestore";
 import { db } from '../../../firebaseConfig';
+import CartSkeleton from '../../common/cartSkeleton/CartSkeleton';
 
 
 const ItemListContainer = () => {
@@ -13,28 +12,20 @@ const ItemListContainer = () => {
   
   const { categoryName } = useParams();
 
-
   useEffect(() => {
     let productsCollection = collection(db, "products")
     let consulta= undefined
     
-    
     if(!categoryName){
       consulta= productsCollection
-
-
     }else{
      consulta = query (productsCollection, where ("category", "==", categoryName))
-
     } 
 
     getDocs(consulta).then(res=>{
       let newArray= res.docs.map (product =>{
-        return {...product.data(), id:product.id}
-        
+        return {...product.data(), id:product.id}  
       })
-
-      //let arrayFiltrado= newArray.filter((elemento) =>elemento.stock > 0)
 
       setItems(newArray);
     })
@@ -44,28 +35,11 @@ const ItemListContainer = () => {
   return (
     <div>
       {items.length === 0 ? (
-        <div style={{ display: 'flex', gap: 20 ,marginLeft: "40px"}}>
-          <div>
-            <Skeleton variant="rectangular" width={300} height={220} />
-            <Skeleton variant="text" width={170} height={50} />
-            <Skeleton variant="text" width={120} height={60} />
-          </div>
-          <div>
-            <Skeleton variant="rectangular" width={300} height={220} />
-            <Skeleton variant="text" width={170} height={50} />
-            <Skeleton variant="text" width={120} height={60} />
-          </div>
-          <div>
-            <Skeleton variant="rectangular" width={300} height={220} />
-            <Skeleton variant="text" width={170} height={50} />
-            <Skeleton variant="text" width={120} height={60} />
-          </div>
-          <div>
-            <Skeleton variant="rectangular" width={300} height={220} />
-            <Skeleton variant="text" width={170} height={50} />
-            <Skeleton variant="text" width={120} height={60} />
-          </div>
-          
+        <div>
+          <CartSkeleton />
+          <CartSkeleton />
+          <CartSkeleton />
+          <CartSkeleton />
         </div>
       ) : (
         <Grid container spacing={2}>
