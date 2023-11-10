@@ -1,4 +1,4 @@
-import { useState } from 'react';
+/*import { useState } from 'react';
 import { customTheme } from '../../../themeConfig';
 import "./checkout.css"
 import { Button, TextField } from '@mui/material';
@@ -126,7 +126,7 @@ const Checkout = () => {
 
 export default Checkout;
 
-
+*/
 
 
 
