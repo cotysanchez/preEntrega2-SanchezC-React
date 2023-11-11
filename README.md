@@ -39,4 +39,14 @@ npm i formik
 
 ##
 
-![](/src/gif/proyectofinal-Sanchez-C-react.gif)
+Version Desktop
+
+![](/src/gif/ProyectoFinal-SanchezC-React.gif)
+
+##
+
+Version Mobile
+
+![](/src/gif/PF-Sanchez%20C-React-mobile.gif)
+
+##
