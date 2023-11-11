@@ -14,9 +14,6 @@ import {
 } from '@mui/material';
 
 
-
-
-
 const CartContainer = () => {
   const { cart, clearCart, deleteProductById, getTotalPrice } =
     useContext(CartContext);
@@ -56,7 +53,7 @@ const CartContainer = () => {
         Este es tu Carrito de Compras
       </h2>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', marginLeft: "45px", marginRight: "20px" }}>
         {cart.map((product) => (
           <Card key={product.id} sx={{ maxWidth: 230, margin: '10px' }}>
             <CardMedia
@@ -101,10 +98,10 @@ const CartContainer = () => {
 
       {cart.length > 0 && (
         <div>
-          <h4>El total a pagar es U$D {total}</h4>
+          <h4 style={{marginLeft: "23px"}}>El total a pagar es U$D {total}</h4>
           <Link to="/checkout">
             <Button
-              style={{ marginLeft: '20px', marginTop: '15px' }}
+              style={{ marginLeft: '50px', marginTop: '15px' }}
               variant="contained"
               size="small"
             >
