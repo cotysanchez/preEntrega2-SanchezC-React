@@ -31,9 +31,12 @@
 
 [Sweet Alert](https://sweetalert2.github.io/)
 
+##
+
 ```
 npm i formik
 ```
 
 ##
-![Preview](/src/gif/proyectofinal-Sanchez-C-react.gif)
+
+![](/src/gif/proyectofinal-Sanchez-C-react.gif)
