@@ -35,3 +35,5 @@
 npm i formik
 ```
 
+##
+![Preview](/src/gif/proyectofinal-Sanchez-C-react.gif)
