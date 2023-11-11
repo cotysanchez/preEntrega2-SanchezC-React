@@ -7,9 +7,6 @@ import { collection, addDoc, updateDoc, doc } from 'firebase/firestore';
 import {  Button, Card, CardContent, TextField, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-
-
-
 const CheckoutOficial = () => {
     const[userData, setUserData]= useState ({
         name: "",
@@ -51,22 +48,37 @@ const CheckoutOficial = () => {
 
   return (
     <>
-    
       {orderId ? (
-        <Card sx={{ maxWidth: 1280, minWidth: 180, marginLeft: "40px", marginTop: "45px" }}>
-          <CardContent>
-            <Typography variant="h2" style={{fontSize: "30px"}}>¡Gracias por Tu Compra!</Typography>
+        <Card
+          sx={{
+            maxWidth: 1280,
+            minWidth: 180,
+            marginLeft: '40px',
+            marginTop: '45px',
+          }}
+        >
+          <CardContent >
+            <Typography variant="h2" style={{ fontSize: '30px' }}>
+              ¡Gracias por Tu Compra!
+            </Typography>
             <Typography
               variant="body1"
-              style={{ marginLeft: '35px', marginBottom: '25px', marginTop: "20px", fontStyle: "oblique" }}>
-              Su identificador de Comprobante es: {orderId}</Typography>
-          
-          <Link to="/" size="small" style={{marginLeft:"35px"}}>Seguir Comprando</Link>
-          
+              style={{
+                marginLeft: '35px',
+                marginBottom: '25px',
+                marginTop: '20px',
+                marginRight: '20px',
+                fontStyle: 'oblique',
+              }}
+            >
+              Su identificador de Comprobante es: {orderId}
+            </Typography>
+
+            <Link to="/" size="small" style={{ marginLeft: '35px' }}>
+              Seguir Comprando
+            </Link>
           </CardContent>
         </Card>
-
-
       ) : (
         <form onSubmit={handleSubmit}>
           <TextField
@@ -75,6 +87,7 @@ const CheckoutOficial = () => {
               color: 'crimson',
               fontSize: ' 1rem',
               marginLeft: '20px',
+              marginRight: '20px',
               marginTop: '30px',
             }}
             type="text"
@@ -89,6 +102,7 @@ const CheckoutOficial = () => {
               color: 'crimson',
               fontSize: ' 1rem',
               marginLeft: '20px',
+              marginRight: '20px',
               marginTop: '5px',
             }}
             type="text"
@@ -103,6 +117,7 @@ const CheckoutOficial = () => {
               color: 'crimson',
               fontSize: ' 1rem',
               marginLeft: '20px',
+              marginRight: '20px',
               marginTop: '5px',
             }}
             type="text"
