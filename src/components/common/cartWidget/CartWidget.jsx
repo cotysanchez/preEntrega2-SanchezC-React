@@ -14,7 +14,7 @@ const CartWidget = () => {
 
   return (
     <Link to="/cart">
-      <Badge badgeContent={total} showZero color="primary">
+      <Badge sx={{marginRight: "10px"}} badgeContent={total} showZero color="primary">
         <LocalMallIcon color="primary-light" />
       </Badge>
     </Link>

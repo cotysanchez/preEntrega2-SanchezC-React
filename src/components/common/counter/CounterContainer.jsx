@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CounterPresentacional from "./CounterPresentacional";
-
+import Swal from "sweetalert2";
 
 
 const CounterContainer = ({ stock, onAdd, initial=1  }) => {
@@ -10,7 +10,15 @@ const CounterContainer = ({ stock, onAdd, initial=1  }) => {
     if (contador < stock) {
       setContador(contador + 1);
     } else {
-      alert('cantidad maxima');
+      alert
+        Swal.fire({
+          position: "top-center",
+          icon: "warning",
+          title: "Ha agregado el maximo permitido",
+          showConfirmButton: false ,
+          timer: 1500,
+        });
+    
     }
   };
 
