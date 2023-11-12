@@ -7,7 +7,7 @@ import { serverTimestamp } from 'firebase/firestore';
 import { db } from '../../../firebaseConfig';
 import{collection, addDoc, updateDoc, doc} from "firebase/firestore";
 import { Link } from 'react-router-dom';
-import Swal from "sweetalert2";
+
 
 
 const CheckoutFormik = () => {
@@ -16,7 +16,6 @@ const CheckoutFormik = () => {
   const total = getTotalPrice();
 
   const [orderId, setOrderId] = useState(null);
-
 
 
   const { handleChange, handleSubmit, errors } = useFormik({
@@ -65,8 +64,6 @@ const CheckoutFormik = () => {
 
 
 
-
-
   return (
     <>
       {orderId ? (
@@ -101,7 +98,7 @@ const CheckoutFormik = () => {
           </CardContent>
         </Card>
 
-        
+
       ) : (
         <div style={{ padding: '50px' }}>
           <form onSubmit={handleSubmit}>

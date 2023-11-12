@@ -4,9 +4,6 @@ import ItemListContainer from "../components/pages/itemListContainer/ItemListCon
 import CheckoutFormik from "../components/pages/checkoutFormik/CheckoutFormik";
 
 
-
-
-
 export const routes = [
   {
     id: 'home',

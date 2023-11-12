@@ -1,4 +1,4 @@
-
+/*
 import  {useContext, useState} from 'react'
 import { CartContext } from '../../../context/CartContext';
 import { serverTimestamp } from 'firebase/firestore';
@@ -139,4 +139,4 @@ const CheckoutOficial = () => {
   );
 }
 
-export default CheckoutOficial
+export default CheckoutOficial */
