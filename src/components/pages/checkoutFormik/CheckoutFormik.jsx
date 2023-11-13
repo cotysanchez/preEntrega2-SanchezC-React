@@ -93,7 +93,9 @@ const CheckoutFormik = () => {
             </Typography>
 
             <Link to="/" size="small" style={{ marginLeft: '35px' }}>
-              Seguir Comprando
+              <Button 
+              variant="contained" >Seguir Comprando
+              </Button>
             </Link>
           </CardContent>
         </Card>

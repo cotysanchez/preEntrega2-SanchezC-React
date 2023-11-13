@@ -2,7 +2,7 @@ import { Box, Grid, Paper, Typography } from "@mui/material";
 import CounterContainer from "../../common/counter/CounterContainer";
 import "./itemDetail.css"
 import { Link } from "react-router-dom";
-
+import { Button } from '@mui/material';
 
 export const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => {
   return (
@@ -25,12 +25,10 @@ export const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => 
             Precio: U$D {productSelected.price}
           </Typography>
 
-          <Typography variant="body2">
-            Stock {productSelected.stock}
-          </Typography>
+          <Typography variant="body2">Stock {productSelected.stock}</Typography>
 
-          <Box style={{ marginTop: '15px'}}>
-            {initial && <h5 >¡Ya tienes {initial} unidades!</h5>}
+          <Box style={{ marginTop: '15px' }}>
+            {initial && <h5>¡Ya tienes {initial} unidades!</h5>}
           </Box>
 
           {showCounter ? (
@@ -49,7 +47,10 @@ export const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => 
                 marginBottom: '20px',
               }}
             >
-              <Link to="/cart" >Terminar compra</Link>
+              <Link to="/cart" size="small">
+                <Button
+                   variant="outlined">Terminar Compra</Button>
+                </Link>
             </Box>
           )}
         </Grid>
