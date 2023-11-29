@@ -55,9 +55,9 @@ const CartContainer = () => {
 
       <div style={{ display: 'flex', flexWrap: 'wrap', marginLeft: "45px", marginRight: "20px" }}>
         {cart.map((product) => (
-          <Card key={product.id} sx={{ maxWidth: 230, margin: '10px' }}>
+          <Card key={product.id} sx={{ minWidth: 280, margin: '10px' }}>
             <CardMedia
-              sx={{ height: 180 }}
+              sx={{ height: 150 }}
               image={product.img}
               title={`image ${product.title}`}
             />
